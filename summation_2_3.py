@@ -11,10 +11,16 @@
 #    (b) compute current sum by adding the number read to the most recent sum.
 # 4. Write out sum of n numbers.
 
-number_of_elements = int(input("Enter the number of numbers to be added: "))
+
+number_of_elements = None
+while type(number_of_elements) != int: # while-loop to check whether number entered is of type int
+    try:
+        number_of_elements = int(input("Enter the number of numbers to be added: "))
+    except ValueError:
+        print("Please enter a valid number. ")
+       
 sum = 0.0
 i =0
-
 while i < number_of_elements:
     element = float(input("Enter the value of number to be added: "))
     sum += element
